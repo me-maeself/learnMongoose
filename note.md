@@ -1,4 +1,3 @@
-TODO How NPM install the necessary dependencies?
 TODO How git best usage is? 
 TODO What file and folder should be ignored? 
 
@@ -40,3 +39,32 @@ TODO What file and folder should be ignored?
 # Insert straight to DB
 - <Model>.insertMany([{..},{..},...])
   - no need to .save
+
+# Finding
+- <Model>.find({})      -> Return <<Query>>
+  - must use .then()
+    - <Model>.find({<key>:<value>}).then(data => console.log(data))
+- <Model>.find({_id: <id>}).then((data)=>console.log(data))    
+- <Model>.findById(<id>)
+- <Model>.findOne(...)
+
+# About "Promise" in mongoose
+- Return type <<Query>> is an "then-able" object
+
+# Update
+This function don't return the actual data. Only the "promise" <<Query>>.
+- <Model>.updateOne({<...find>}, {<...replace>})
+- <Model>.updateMany({<...find>}, {<...replace>})
+
+# Find and Update
+This function return the before-updated data.
+- findOneAndUpdate({<...find>}, {<...replace>}, <option>)
+  - change <option> to `{new: true}`
+- findManyAndUpdate()
+
+# Remove
+- deleteOne
+- deleteMany
+- findOneAndDelete
+
+# Schema Validation
