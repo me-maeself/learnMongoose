@@ -68,5 +68,40 @@ This function return the before-updated data.
 - findOneAndDelete
 
 # Schema Validation
+```js
+{
+  <key1>: {
+    <options1>: <value>,
+    <options2>: <value>,
+    ...
+  },
+  <key2>: {
+    <options1>: <value>,
+    <options2>: <value>,
+    ...
+  },
+  ...
+}
+```
+- <options>:
+  - type
+  - required
+  - default
+  - maxLength
+  - uppercase
+  - match -> RegExp
+  - min
+  - max
+  - enum -> Work on string type. Validate if those string is in an passed argument string
 
-name.properties.msg
+# Validating Update
+- <Models>.<function>(<>,<>,{runValidator: true})
+
+# Error Validation Syntax
+- <options> : [<value>, <errorMsg>]
+
+# Adding Method to the Models
+- Instances Method
+  - 
+- Class Method
+  - 
