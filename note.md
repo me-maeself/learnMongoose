@@ -1,3 +1,7 @@
+TODO How NPM install the necessary dependencies?
+TODO How git best usage is? 
+TODO What file and folder should be ignored? 
+
  # Overview
  Crucial
  - ORM/ODM
@@ -33,5 +37,6 @@
     - Change the model
     - .save again
 
-# Insert
+# Insert straight to DB
 - <Model>.insertMany([{..},{..},...])
+  - no need to .save
