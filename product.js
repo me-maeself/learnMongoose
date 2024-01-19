@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 main()
-	.then(() => console.log("Success"))
+	.then(() => console.log("Connection Success"))
 	.catch((err) => console.log(err));
 
 async function main() {
@@ -11,6 +11,7 @@ async function main() {
 const productSchema = new mongoose.Schema({
 	name: {
 		type: String,
+		required: true,
 	},
 	price: {
 		type: Number,
@@ -20,8 +21,9 @@ const productSchema = new mongoose.Schema({
 const Product = mongoose.model("Product", productSchema);
 
 const bike = new Product({
-	// name: "Mountain Bike",
+	name: "Mountain Bike",
 	price: 599,
+	color: "red",
 });
 
 bike.save()

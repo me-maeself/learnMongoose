@@ -68,3 +68,5 @@ This function return the before-updated data.
 - findOneAndDelete
 
 # Schema Validation
+
+name.properties.msg
