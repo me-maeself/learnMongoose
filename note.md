@@ -101,7 +101,30 @@ This function return the before-updated data.
 - <options> : [<value>, <errorMsg>]
 
 # Adding Method to the Models
-- Instances Method
-  - 
-- Class Method
-  - 
+- Model Instances Method -> via adding prototype
+  - <Schema>.methods.<functionName> = function(...) {...}
+- Model Static Method -> via Class <Models> name calling
+  - <Models>.statics.<functionName> = function(...) {...}
+
+# Mongoose Virtuals
+- <Schema>.virtual("<propertiesName>").get(function(){return ...})
+  - Treat the virtuals as a properties inside an instances.
+  - Virtuals exist in mongoose
+- Set could also be declared. -> See more in the documentations 
+
+# Mongoose Middleware
+Used to execute automated processes after a specific action has been done
+```
+personSchema.pre("save", async function () {
+	this.first = "Hello";
+	this.last = "World";
+	console.log("About to save!");
+});
+
+personSchema.post("save", async function () {
+	console.log("Just Saved!");
+});
+```
+  - Pre
+  - Post
+See more in the documentation
